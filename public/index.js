@@ -1,11 +1,11 @@
 const mapImage = new Image();
-mapImage.src = "/snowy-sheet.png";
+mapImage.src = "snowy-sheet.png";
 
 const santaImage = new Image();
-santaImage.src = "/santa.png";
+santaImage.src = "santa.png";
 
 const speakerImage = new Image();
-speakerImage.src = "/speaker.png";
+speakerImage.src = "speaker.png";
 
 const walkSnow = new Audio("walk-snow.mp3");
 
@@ -14,7 +14,7 @@ canvasEl.width = window.innerWidth;
 canvasEl.height = window.innerHeight;
 const canvas = canvasEl.getContext("2d");
 
-const socket = io();
+const socket = io('http://localhost:8080');
 
 const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 

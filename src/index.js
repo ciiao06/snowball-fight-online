@@ -5,9 +5,14 @@ const { Server } = require("socket.io");
 const app = express();
 const httpServer = createServer(app);
 
-const io = new Server(httpServer);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",  // this allows all origins
+    methods: ["GET", "POST"]
+  }
+});
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 const loadMap = require("./mapLoader");
 
